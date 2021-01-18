@@ -52,6 +52,9 @@ void Merge(int arr[], int low, int mid, int high)
 // function for MergeSort
 void MergeSort(int A[], int low, int high) // A – input array, low – lower index, high – higher index
 {
+    if (low >= high){
+        return;
+    }
     if (low < high) // the array has at least two elements
     {
         int mid = (low + high) / 2;
