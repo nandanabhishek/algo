@@ -1,3 +1,3 @@
 ## Time Complexity :-
 
--- O(n ^ 2:81)
+- O(n ^ 2.81)
