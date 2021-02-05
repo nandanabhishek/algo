@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-
+// knap-sack function
 void knapsack(int num, float weight[], float profit[], float capacity)
 {
     float x[20];
@@ -29,16 +29,20 @@ void knapsack(int num, float weight[], float profit[], float capacity)
 
     total_profit = total_profit + (x[i] * profit[i]);
 
-    printf("\nThe weight of each object taken is :\n");
+    printf("\n\nThe fraction of each object taken (After items are sorted according to profit/weight ratio) is :\n");
     for(i=0; i<num; i++) {
         printf("%.2f\t", x[i]);
     }
 
-    printf("\n\n Maximum profit is : %.2f", total_profit);
+    printf("\n\nThe weight of each object taken (After items are sorted according to profit/weight ratio) is :\n");
+    for(i=0; i<num; i++) {
+        printf("%.2f\t", weight[i] * x[i]);
+    }
+
+    printf("\n\n Maximum Profit : %.2f", total_profit);
 }
 
-
-
+// main function
 int main() {
     float weight[20];
     float profit[20];
@@ -72,7 +76,6 @@ int main() {
     }
 
     // sorting the objects in descending order on the basis of array ratio[]
-    // selection sort
     for(int i=0; i<num; i++)
     {
         float temp;
